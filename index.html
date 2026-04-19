@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CaliMix 🌴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #feca57;
+            --glass: rgba(255, 255, 255, 0.15);
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .logo {
+            font-size: 64px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background 0.2s;
+            background: white;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #f0f0f0;
+        }
+
+        .download-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .btn-ios {
+            background: #ffffff;
+        }
+
+        .btn-android {
+            background: #ffffff;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Platform Detection Highlighting */
+        .highlight {
+            outline: 3px solid var(--secondary);
+            box-shadow: 0 0 15px var(--secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="logo">🌴</span>
+        <div class="badge">Official Release</div>
+        <h1>CaliMix</h1>
+        <p class="subtitle">Experience the ultimate vibe. <br>Download for your device below.</p>
+
+        <div class="btn-group">
+            <a href="https://github.com/skyesonlyfans/CaliMix/releases/download/iOS/1FBF21CD-B24C-47B2-BDC3-DE7BEF55052B.mobileconfig" 
+               class="download-btn btn-ios" id="ios-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/iPhone_Logo_2016.svg" alt="iOS">
+                Download for iOS
+            </a>
+
+            <a href="https://github.com/skyesonlyfans/CaliMix/releases/download/AndroidRelease/app-apk-69e5140bf1ecc-1776620555.apk" 
+               class="download-btn btn-android" id="android-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
+                Download for Android
+            </a>
+        </div>
+
+        <div class="footer-note">
+            <strong>Installation:</strong><br>
+            iOS: Tap "Allow" on the profile download, then go to Settings > Profile Downloaded to install.<br>
+            Android: You may need to "Allow from Unknown Sources" in your browser settings.
+        </div>
+    </div>
+
+    <script>
+        // Simple detection to highlight the user's platform
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            document.getElementById('ios-link').classList.add('highlight');
+        } else if (/android/i.test(userAgent)) {
+            document.getElementById('android-link').classList.add('highlight');
+        }
+    </script>
+</body>
+</html>
